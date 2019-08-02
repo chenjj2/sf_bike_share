@@ -15,7 +15,7 @@ def trip_id_to_encoded_time(file=DATA_FILE, testing=True, output_to_file=False):
     df = pd.read_csv(file, usecols=['id', 'start_date'], nrows=read_nrows, parse_dates=['start_date'])
     id_ = df['id'].tolist()
     start_date_list = df['start_date'].tolist()
-    start_date_features = [[x.year, x.month, x.day, x.weekday(), x.hour, x.minute]
+    start_date_features = [[x.year, x.month, x.day, x.weekday(), x.hour]
                            for x in start_date_list]
     enc = OneHotEncoder()
     enc.fit(start_date_features)
