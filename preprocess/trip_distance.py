@@ -17,9 +17,9 @@ def distance(lat_x, long_x, lat_y, long_y):
     return dis
 
 
-def cal_trip_distance():
-    df_trip = pd.read_csv(DATA_PATH + FILENAME_TRIP, usecols=['id', 'start_station_id', 'end_station_id'])
-    df_station = pd.read_csv(DATA_PATH + FILENAME_STATION, usecols=['id', 'lat', 'long'])
+def cal_trip_distance(file_trip=DATA_PATH + FILENAME_TRIP, file_station=DATA_PATH + FILENAME_STATION):
+    df_trip = pd.read_csv(file_trip, usecols=['id', 'start_station_id', 'end_station_id'])
+    df_station = pd.read_csv(file_station, usecols=['id', 'lat', 'long'])
     df_station.rename(columns={'id': 'station_id'}, inplace=True)
 
     df_trip = df_trip.merge(df_station, how='left', left_on='start_station_id', right_on='station_id')
