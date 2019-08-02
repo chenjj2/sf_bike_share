@@ -56,6 +56,8 @@ def read_weather(path=None, files=None, n_row=None):
                                       'max_gust_speed_mph', 'precipitation_inches', 'cloud_cover', 'zip_code'],
                              nrows=n_row)
     df_weather['date'] = df_weather['date'].dt.date
+    df_weather['precipitation_inches'] = df_weather['precipitation_inches'].replace({'T': '0'})
+    df_weather['precipitation_inches'] = df_weather['precipitation_inches'].astype(float)
     return df_weather
 
 
