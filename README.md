@@ -41,3 +41,5 @@ Then we fine tuned parameters on several models.
 The best neural network structure is with (50, 20, 3)-RELU hidden layers, giving R^2 = 0.61 and MSE = 32321 (about 3 min error).
 
 The best gradient boosting regression is with maximum depth = 3, giving R^2 = 0.69 and MSE = 25500 (2 min and 40s error).
+
+Mean and median duration in data is 15 min and 8 min.
